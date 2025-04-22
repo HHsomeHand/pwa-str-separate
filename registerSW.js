@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/pwa-str-separate/sw.js', { scope: '/pwa-str-separate/' })})}
