@@ -20,17 +20,21 @@ jobs:
           node-version: '20' # 你的 Node 版本
           cache: 'pnpm' # 缓存 pnpm 依赖
 
-      # 3. 安装依赖
+      # 3. 安装 pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # 4. 安装依赖
       - name: Install Dependencies
         run: pnpm install
 
-      # 4. 构建项目
+      # 5. 构建项目
       - name: Build
         run: pnpm build
         env:
           VITE_BASE_URL: /my-vue-pwa/ # 替换为你的仓库名
 
-      # 5. 部署到 gh-pages
+      # 6. 部署到 gh-pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
