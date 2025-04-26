@@ -8,7 +8,7 @@ function splitStringToText(str) {
   let content = str.split('') // "hzx" -> ["h", "z", "x"]
       .map(ch => `'${ch}'`) // ["h", "z", "x"] -> ["'h'", "'z'", "'x'"]
       .join(', ') // ["'h'", "'z'", "'x'"] -> "'h', 'z', 'x'"
-  return '[' + content + ']';
+  return '{' + content + '}';
 }
 
 watch(input, (newValue) => {
